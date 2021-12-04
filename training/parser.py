@@ -20,12 +20,17 @@ def remove_emoji(string):
                            "]+", flags=re.UNICODE)
     return emoji_pattern.sub(r'', string)
 
+def is_a_question(string):
+    expression = r".+\?.+"
+    return bool(re.match(expression, string))
+
 if __name__ == '__main__':
 
     parsed_lines = []
     with open("jokes.txt") as file:
         for line in file:
-            parsed_lines.append(remove_emoji(line))
+            if(is_a_question(line)):
+                parsed_lines.append(remove_emoji(line))
     
     cleaned_lines = set(parsed_lines)
 
