@@ -1,0 +1,1 @@
+Keywords: Database, trocadilhos, database de trocadilhos, piadas, base de piadas
